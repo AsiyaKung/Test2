@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฟอร์มลับ 💖</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; text-align: center; padding: 20px; background-color: #ffebf0; }
+        form { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); }
+        input, button { width: 100%; padding: 10px; margin: 5px 0; border-radius: 5px; border: 1px solid #ddd; }
+        button { background: #ff4d6d; color: white; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>💖 ฟอร์มลับสำหรับที่รัก 💖</h2>
+    <form id="secretForm">
+        <label>📝 คำถาม:</label>
+        <input type="text" id="question" placeholder="อยากถามอะไรกับที่รัก?">
+
+        <label>💌 คำตอบ:</label>
+        <input type="text" id="answer" placeholder="ตอบได้เลยน้า~">
+
+        <button type="button" onclick="downloadTxtFile()">💾 บันทึก</button>
+    </form>
+
+    <script>
+        function downloadTxtFile() {
+            let question = document.getElementById('question').value;
+            let answer = document.getElementById('answer').value;
+
+            if (!question || !answer) {
+                alert("กรอกคำถามและคำตอบก่อนน้า~ 💖");
+                return;
+            }
+
+            let textContent = `คำถาม: ${question}\nคำตอบ: ${answer}`;
+            let blob = new Blob([textContent], { type: "text/plain" });
+            let link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "คำตอบจากที่รัก.txt";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            alert("บันทึกเสร็จแล้ว ส่งไฟล์มาให้เค้านะ! 💌");
+        }
+    </script>
+
+</body>
+</html>
