@@ -13,13 +13,13 @@
 </head>
 <body>
 
-    <h2>💖 ฟอร์มลับสำหรับที่รัก 💖</h2>
+    <h2>💖 ฟอร์มลับสำหรับอ้วนนนนน 💖</h2>
     <form id="secretForm">
         <label>📝 คำถาม:</label>
-        <input type="text" id="question" placeholder="อยากถามอะไรกับที่รัก?">
+        <input type="text" id="question" placeholder="อยากถามอะไรกับข้าาา">
 
         <label>💌 คำตอบ:</label>
-        <input type="text" id="answer" placeholder="ตอบได้เลยน้า~">
+        <input type="text" id="answer" placeholder="ตอบได้เรยยย">
 
         <button type="button" onclick="downloadTxtFile()">💾 บันทึก</button>
     </form>
@@ -38,12 +38,12 @@
             let blob = new Blob([textContent], { type: "text/plain" });
             let link = document.createElement("a");
             link.href = URL.createObjectURL(blob);
-            link.download = "คำตอบจากที่รัก.txt";
+            link.download = "คำตอบจากอ้วนนน.txt";
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
 
-            alert("บันทึกเสร็จแล้ว ส่งไฟล์มาให้เค้านะ! 💌");
+            alert("บันทึกเสร็จแล้ว ส่งไฟล์มาให้ข้าด้วยย! 💌");
         }
     </script>
 
